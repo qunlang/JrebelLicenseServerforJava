@@ -1,7 +1,7 @@
-FROM java:8-jre-alpine
+FROM openjdk:8-alpine
 
-ENV PORT 8081
+ENV PORT 8888
 
-ADD target/JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-jar-with-dependencies.jar /JrebelBrains.jar
-CMD java -jar /JrebelBrains.jar -p $PORT
+ADD build/libs/JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-all.jar /JrebelBrains.jar
+CMD java -jar -Xmx128m /JrebelBrains.jar -p $PORT
 

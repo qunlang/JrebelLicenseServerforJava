@@ -40,10 +40,10 @@ https://www.aliyun.com/minisite/goods?userCode=eogi8dax
 
    ```bash
    # nohup  命令   &     ：表示后台运行，这样保证ssh连接断开服务也是一直开着的
-   nohup java -jar JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-jar-with-dependencies.jar -p 8081 &
+   nohup java -jar JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-jar-with-dependencies.jar -p 8888 &
    ```
 
-4. 最后，可以检查下是否OK了，可以通过浏览器访问ip:8081或者使用命令查看：  `ps -ef | grep java`
+4. 最后，可以检查下是否OK了，可以通过浏览器访问ip:8888或者使用命令查看：  `ps -ef | grep java`
 
 温馨提示：跳过第二步直接在这里下载打好的jar包也行：
 
@@ -68,7 +68,7 @@ Run:
 ```
 cd /path/to/project
 mvn compile 
-mvn exec:java -Dexec.mainClass="com.vvvtimes.server.MainServer" -Dexec.args="-p 8081"
+mvn exec:java -Dexec.mainClass="com.vvvtimes.server.MainServer" -Dexec.args="-p 8888"
 ```
 Packing a runnable jar:
 ```
@@ -76,15 +76,15 @@ mvn package
 ```
 then
 ```
-java -jar JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-jar-with-dependencies.jar -p 8081
+java -jar JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-jar-with-dependencies.jar -p 8888
 ```
-default port is 8081.
+default port is 8888.
 
 Or use gradle
 ```
 gradle shadowJar
 
-java -jar JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-all.jar -p 8081
+java -jar JrebelBrainsLicenseServerforJava-1.0-SNAPSHOT-all.jar -p 8888
 ```
 ## Docker
 Build image
@@ -97,7 +97,7 @@ start container
 ```
 docker run -d --name jrebel-ls --restart always -e PORT=9001 -p 9001:9001 jrebel-ls
 ```
-default port is 8081,you can modify it
+default port is 8888,you can modify it
 ## Support
 
 Jrebel
